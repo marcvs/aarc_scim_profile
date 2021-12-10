@@ -13,7 +13,8 @@ short_scim_attributes = { # a dict with default values
     "required": "false",
     "returned": "default",
     # "subAttributes": [],
-    "uniqueness": "none"
+    "uniqueness": "none",
+    "status": "unclear",
 }
 scim_attributes = { # a dict with default values
     # "name": "",
@@ -35,7 +36,7 @@ schema_json = json.loads(fh.read())
 
 
 for item in schema_json[0]['attributes']:
-    stdout.write("-"*113+"\n")
+    stdout.write("-"*127+"\n")
     stdout.write(F"{item['name']+':'[0:28]:28}")
 
     # Description
@@ -57,7 +58,7 @@ for item in schema_json[0]['attributes']:
         try:
             stdout.write(F" {item[attr]:<12}|")
         except KeyError:
-            stdout.write(F" {short_scim_attributes[attr]+'(dflt)':<12}|")
+            stdout.write(F" {'['+short_scim_attributes[attr]+']':<12}|")
     stdout.write("\n")
 
 
@@ -84,7 +85,7 @@ for item in schema_json[0]['attributes']:
 
         except KeyError:
             if show_defaults:
-                stdout.write(F"{scim_attributes[attr]}(dflt)\n")
+                stdout.write(F"[{scim_attributes[attr]}]\n")
     
 
     # sub attributes
@@ -93,5 +94,6 @@ for item in schema_json[0]['attributes']:
         for sub_attr in item['subAttributes']:
             print (F"        - {sub_attr['name']}")
 
+print("\nIf default values have been used, this is shown in [square braces]\n")
 
 
