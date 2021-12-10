@@ -10,3 +10,5 @@ The suggested schema contains claims in addition to those specified in
 
 It might make sense to explicityly name the OIDC claim names. Currently
 those are specified in the values of the `name` attributes.
+
+One next step is to add example output.
