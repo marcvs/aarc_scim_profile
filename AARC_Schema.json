@@ -167,7 +167,7 @@
             "status": "unstable",
             "description": "This attribute describes the groups this user is a member of in the Community AAI [AARC-G069] and [AARC-G027].",
             "type": "complex",
-            "multiValued": false,
+            "multiValued": true,
             "required": true,
             "mutability": "readWrite",
             "returned": "default",
