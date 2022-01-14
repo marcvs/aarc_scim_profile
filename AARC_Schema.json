@@ -186,21 +186,11 @@
                     "uniqueness": "none"
                 },
                 {
-                    "name": "id",
-                    "saml_attribute_name": "",
-                    "saml_attribute_urn": "",
-                    "description": "ID of a group to which the entitlement may correspond",
-                    "type": "string",
+                    "name" : "$ref",
+                    "type" : "reference",
                     "multiValued": false,
                     "required": false,
                     "caseExact": true,
-                    "mutability": "readWrite",
-                    "returned": "default",
-                    "uniqueness": "none"
-                },
-                {
-                    "name" : "$ref",
-                    "type" : "reference",
                     "referenceTypes" : [
                         "User",
                         "Group",
