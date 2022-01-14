@@ -12,7 +12,9 @@ Please run these command from the folder that also contains the `.git` folder
 for this repository:
         git submodule init
         git submodule update
-        export PYTHONPATH=`pwd`/schimschema   # (recommended)
+        # Apply patch to allow parsing without core schema
+        patch -p1 < scimschema.patch
+        export PYTHONPATH=`pwd`/scimschema
 """)
     sys.exit(2)
 
