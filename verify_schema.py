@@ -3,6 +3,7 @@
 import os
 import sys
 import json
+import argparse
 try:
     from scimschema import validate
     from scimschema._model.model import Model
@@ -17,6 +18,13 @@ for this repository:
         export PYTHONPATH=`pwd`/scimschema
 """)
     sys.exit(2)
+
+def parseOptions():
+    '''parse commandline parameters'''
+    parser = argparse.ArgumentParser(description='''verify_schema.py''')
+    parser.add_argument('--schema', default='AARC_Schema_Parseable.json')
+    parser.add_argument('--scim',   default='AARC_SCIM_Example.json')
+    return parser.parse_args()
 
 def load_json_schema(filename):
     '''directly load a schema by filename'''
@@ -35,10 +43,14 @@ def load_json_data(filename):
         sys.exit(4)
     return obj
 
-aarc_schema_file = "AARC_Schema_Parseable.json"
-aarc_scim_file   = "AARC_SCIM_Example.json"
 
-if not os.path.exists(aarc_schema_file):
+
+
+args = parseOptions()
+aarc_schema_file = args.schema
+aarc_scim_file   = args.scim
+
+if not os.path.exists(aarc_schema_file) and args.schema == "AARC_Schema_Parseable.json":
     print ("""Cannot find AARC_Schema_Parseable.json.
 Please create it by running:
         ./make_parseable.sh""")
