@@ -1,6 +1,6 @@
 {
     "id": "urn:geant:aarc:scim:schemas:AARC_Community_Identity",
-    "name": "aarc_community_identity",
+    "name": "AARC Community Identity",
     "description": "Attributes to describe a user in the context of his community, as defined by AARC",
     "attributes": [
         {
