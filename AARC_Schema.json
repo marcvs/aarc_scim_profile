@@ -186,23 +186,20 @@
                     "uniqueness": "none"
                 },
                 {
-                    "name" : "$ref",
-                    "type" : "reference",
+                    "name": "$ref",
+                    "type": "reference",
                     "multiValued": false,
                     "required": false,
                     "caseExact": true,
-                    "referenceTypes" : [
+                    "referenceTypes": [
                         "User",
                         "Group",
                         "Entitlement"
                     ],
-                    "multiValued" : false,
-                    "description" : "The URI of the corresponding entitlement resource to which the user belongs.",
-                    "required" : false,
-                    "caseExact" : false,
-                    "mutability" : "readOnly",
-                    "returned" : "default",
-                    "uniqueness" : "none"
+                    "description": "The URI of the corresponding entitlement resource to which the user belongs.",
+                    "mutability": "readOnly",
+                    "returned": "default",
+                    "uniqueness": "none"
                 }
             ]
         },
@@ -310,4 +307,3 @@
         "location": "https://aarc-community.org/scim/schemas/urn:geant:aarc:scim:schemas:AARC_Community_Identity"
     }
 }
-
