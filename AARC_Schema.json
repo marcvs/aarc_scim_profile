@@ -1,10 +1,10 @@
 {
-    "id": "urn:geant:aarc:scim:schemas:AARC_Community_Identity",
+    "id": "urn:geant:aarc:scim:schemas:AARCCommunity:User",
     "name": "AARC Community Identity",
     "description": "Attributes to describe a user in the context of his community, as defined by AARC",
     "attributes": [
         {
-            "name": "voperson_id",
+            "name": "voperson_id", // to be replaced by "user.userName" of scim:schemas:core:2.0:User
             "saml_attribute_name": "voPersonID",
             "saml_attribute_urn": "urn:1.3.6.1.4.1.25178.4.1.6",
             "status": "stable",
@@ -18,7 +18,7 @@
             "uniqueness": "global"
         },
         {
-            "name": "name",
+            "name": "name",      // to be replaced by "user.name or displayName" of scim:schemas:core:2.0:User
             "saml_attribute_name": "displayName",
             "saml_attribute_urn": "urn:1.3.6.1.4.1.25178.4.1.6",
             "status": "stable",
@@ -32,7 +32,7 @@
             "uniqueness": "none"
         },
         {
-            "name": "given_name", // be removed following Core
+            "name": "given_name", // to be replaced by "user.givenName" of scim:schemas:core:2.0:User
             "saml_attribute_name": "givenName",
             "saml_attribute_urn": "urn:oid:2.5.4.42",
             "status": "stable",
@@ -46,7 +46,7 @@
             "uniqueness": "none"
         },
         {
-            "name": "family_name", // probably following Core
+            "name": "family_name", // to be replaced by "user.familyName" of scim:schemas:core:2.0:User
             "saml_attribute_name": "sn",
             "saml_attribute_urn": "urn:oid:2.5.4.4",
             "status": "stable",
@@ -60,7 +60,7 @@
             "uniqueness": "none"
         },
         {
-            "name": "emails", // will be part of extended schema
+            "name": "emails", // Under discussion whether it can be moved to scim:core
             "status": "unstable",
             "description": "Email addresses of the user. Users may have multiple email addresses, some of which were verified. A verified email address means that the Community AAI or the user’s Home IdP has taken affirmative steps to ensure that this email address was controlled by the user at the time the verification was performed.",
             "type": "complex",
@@ -97,7 +97,7 @@
             ]
         },
         {
-            "name": "voperson_external_affiliation",
+            "name": "voPersonExternalAffiliation",
             "saml_attribute_name": "voPersonExternalAffiliation",
             "saml_attribute_urn": "urn:oid:1.3.6.1.4.1.25178.4.1.11",
             "status": "unclear",
@@ -105,13 +105,14 @@
             "type": "string",
             "multiValued": true,
             "required": true,
-            "caseExact": false,
+            "caseExact": "unclear ;-)",
             "mutability": "readWrite",
             "returned": "default",
-            "uniqueness": "none"
+            "uniqueness": "none",
+            "canonicalValues": ["faculty", "industry-researcher", "member", "affiliate", "unknown" ]
         },
         {
-            "name": "eduperson_scoped_affiliation",// => voperson_scoped_affiliation
+            "name": "voPersonScopedAffiliation",
             "saml_attribute_name": "urn:oid:1.3.6.1.4.1.5923.1.1.1.9",
             "saml_attribute_urn": "eduPersonScopedAffiliation",
             "status": "unclear",
@@ -119,13 +120,13 @@
             "type": "string",
             "multiValued": true,
             "required": true,
-            "caseExact": true,
+            "caseExact": "unclear ;-)",
             "mutability": "readWrite",
             "returned": "default",
             "uniqueness": "none"
         },
         {
-            "name": "entitlements", // rather than grups! => use core
+            "name": "entitlements", // to be replaced by "entitlements" of scim:schemas:core:2.0:User
             "status": "stable",
             "description": "This attribute describes the groups this user is a member of in the Community AAI [AARC-G069] and [AARC-G027].",
             "type": "complex",
@@ -166,7 +167,7 @@
             ]
         },
         {
-            "name": "eduperson_assurance", // name
+            "name": "eduPersonAssurance",
             "saml_attribute_name": "eduPersonAssurance",
             "saml_attribute_urn": "urn:oid:1.3.6.1.4.1.5923.1.1.1.11",
             "status": "stable",
@@ -180,7 +181,7 @@
             "uniqueness": "none"
         },
         {
-            "name": "eduperson_orcid",
+            "name": "eduPersonOrcid",
             "saml_attribute_name": "eduPersonOrcid",
             "saml_attribute_urn": "urn:oid:1.3.6.1.4.1.5923.1.1.1.16",
             "status": "stable",
@@ -188,13 +189,13 @@
             "type": "string",
             "multiValued": false,
             "required": false,
-            "caseExact": true,
+            "caseExact": "to be evaluated",
             "mutability": "readWrite",
             "returned": "default",
             "uniqueness": "none"
         },
         {
-            "name": "preferred_username",
+            "name": "preferredUsername",
             "saml_attribute_name": "UNCLEAR",
             "saml_attribute_urn": "UNCLEAR",
             "status": "stable",
@@ -202,10 +203,10 @@
             "type": "string",
             "multiValued": false,
             "required": true,
-            "caseExact": true,
+            "caseExact": "to be evaluated",
             "mutability": "readWrite",
             "returned": "default",
-            "uniqueness": "none"
+            "uniqueness": "server"
         },
         {
             "name": "sub",
@@ -222,7 +223,7 @@
             "uniqueness": "server"
         },
         {
-            "name": "ssh_public_key",
+            "name": "sshPublicKey",
             "saml_attribute_name": "sshPublicKey",
             "saml_attribute_urn": "urn:oid:1.3.6.1.4.1.24552.500.1.1.1.13",
             "status": "unclear",
@@ -236,7 +237,7 @@
             "uniqueness": "none"
         },
         {
-            "name": "voperson_certificate_dn",
+            "name": "voperson_certificate_dn",  // to be replaced by "X509Certificates" of scim:schemas:core:2.0:User
             "saml_attribute_name": "voPersonCertificateDN",
             "saml_attribute_urn": "urn:oid:1.3.6.1.4.1.25178.4.1.3",
             "description": "The Subject Distinguished Name(s) of the user’s X.509 certificate(s)",
@@ -250,7 +251,7 @@
             "uniqueness": "none"
         },
         {
-            "name": "voperson_certificate_issuer_dn",
+            "name": "voPersonCertificateIssuerDN",
             "saml_attribute_name": "voPersonCertificateIssuerDN",
             "saml_attribute_urn": "urn:oid:1.3.6.1.4.1.25178.4.1.4",
             "status": "unclear",
@@ -258,7 +259,7 @@
             "type": "string",
             "multiValued": true,
             "required": false,
-            "caseExact": true,
+            "caseExact": false,
             "mutability": "readWrite",
             "returned": "default",
             "uniqueness": "none"
