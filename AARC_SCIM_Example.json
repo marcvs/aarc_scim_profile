@@ -1,5 +1,8 @@
 {
-    "schemas": ["urn:geant:aarc:scim:schemas:AARC_Community_Identity"],
+    "schemas": [
+        "urn:ietf:params:scim:schemas:core:2.0:User",
+        "urn:geant:aarc:scim:schemas:AARCCommunity:User"
+    ],
     "id": "2819c223-7f76-453a-919d-413861904646",
     "externalId": 9,
     "meta": {
@@ -7,47 +10,70 @@
         "created": "2011-08-01T18:29:49.793Z",
         "lastModified": "Invalid date",
         "location": "https://example.com/v2/Users/2819c223...",
-        "version": "W\/\"f250dd84f0671c3\""
+        "version": "W/\"f250dd84f0671c3\""
     },
-    "urn:geant:aarc:scim:schemas:AARC_Community_Identity": {
-        "voperson_id": "some id",
-        "name": "Elizabeth Alexandra Mary Mountbatten Windsor",
-        "given_name": [ "Elizabeth", "Alexandra", "Mary"],
-        "family_name": [ "Mountbatten", "Windsor" ],
-        "emails": [
+    "userName": "some id",
+    "user": {
+        "displayName": "Elizabeth Alexandra Mary Mountbatten Windsor",
+        "givenName": [
+            "Elizabeth",
+            "Alexandra",
+            "Mary"
+        ],
+        "familyName": [
+            "Mountbatten",
+            "Windsor"
+        ]
+    },
+    "entitlements": [
+        {
+            "value": "urn:mace:egi.eu:group:royals:admins:role=owner#aai.egi.eu",
+            "$ref": "https://groups.royal.uk/core-team/?filter=admins"
+        },
+        {
+            "value": "urn:geant:edugain:group:royals:role=queen",
+            "$ref": "https://groups.edugain.org/royals/?role=queen"
+        }
+    ],
+    "emails": [
+        {
+            "value": "elizabeth@royal.uk",
+            "email_verified": true
+        },
+        {
+            "value": "liz@gmail.com",
+            "email_verified": false
+        }
+    ],
+    "urn:geant:aarc:scim:schemas:AARCCommunity:User": {
+        "voPersonID": "some id",
+        "voPersonVerifiedEmails": [
             {
                 "value": "elizabeth@royal.uk",
                 "email_verified": true
-            }, {
+            },
+            {
                 "value": "liz@gmail.com",
                 "email_verified": false
             }
         ],
-        "voperson_verified_emails": [
-            {
-                "value": "elizabeth@royal.uk",
-                "email_verified": true
-            }, {
-                "value": "liz@gmail.com",
-                "email_verified": false
-            }
-        ],
-        "voperson_external_affiliation": [
+        "voPersonExternalAffiliation": [
             "member@royal.uk"
         ],
-        "eduperson_scoped_affiliation": [
+        "eduPersonScopedAffiliation": [
             "member@community.of.royals.uk"
         ],
         "entitlements": [
             {
                 "value": "urn:mace:egi.eu:group:royals:admins:role=owner#aai.egi.eu",
                 "$ref": "https://groups.royal.uk/core-team/?filter=admins"
-            },{
+            },
+            {
                 "value": "urn:geant:edugain:group:royals:role=queen",
                 "$ref": "https://groups.edugain.org/royals/?role=queen"
             }
         ],
-        "eduperson_assurance": [
+        "eduPersonAssurance": [
             "https://refeds.org/assurance/IAP/high",
             "https://refeds.org/assurance/IAP/medium",
             "https://refeds.org/assurance/IAP/local-enterprise",
@@ -59,8 +85,14 @@
             "https://refeds.org/assurance/profile/cappuccino",
             "https://refeds.org/assurance/IAP/low"
         ],
-        "preferred_username": "hmsqueenliz",
-        "sub": "d7a53cb23423420398409de7355956560282158ecac8f3d2c770b474862f4756"
-        }
+        "eduPersonOrcid": "0300-0122-8229-2117",
+        "preferredUsername": "hmsqueenliz",
+        "sub": "d7a53cb23423420398409de7355956560282158ecac8f3d2c770b474862f4756",
+        "sshPublicKeys": [
+            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAqA5FW6m3FbFhCOsRQBxKMRki5qJxoNhZdaeLXg6ym/"
+        ],
+        "voPersonCertificateIssuerDNs": [
+            "C = DE, O = GermanGrid, CN = GridKa-CA"
+        ]
+    }
 }
-
