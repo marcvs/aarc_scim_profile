@@ -91,7 +91,7 @@
         "sshPublicKeys": [
             "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAqA5FW6m3FbFhCOsRQBxKMRki5qJxoNhZdaeLXg6ym/"
         ],
-        "voPersonCertificateIssuerDNs": [
+        "voPersonCertificateIssuerDN": [
             "C = DE, O = GermanGrid, CN = GridKa-CA"
         ]
     }
