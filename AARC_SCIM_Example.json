@@ -1,10 +1,10 @@
 {
     "schemas": [
         "urn:ietf:params:scim:schemas:core:2.0:User",
+        "urn:temporaryNamespace:scim:schemas:voPerson:User",
         "urn:geant:aarc:scim:schemas:AARCCommunity:User"
     ],
-    "id": "2819c223-7f76-453a-919d-413861904646",
-    "externalId": 9,
+    "id": "d7a53cb23423420398409de7355956560282158ecac8f3d2c770b474862f4756",
     "meta": {
         "resourceType": "User",
         "created": "2011-08-01T18:29:49.793Z",
@@ -45,34 +45,121 @@
             "email_verified": false
         }
     ],
-    "urn:geant:aarc:scim:schemas:AARCCommunity:User": {
-        "voPersonID": "some id",
-        "voPersonVerifiedEmails": [
+    "urn:temporaryNamespace:scim:schemas:voPerson:User": {
+        "voPersonAffiliation": [
             {
-                "value": "elizabeth@royal.uk",
-                "email_verified": true
-            },
+                "value": "gradstudent",
+                "prior": false,
+                "role": "none",
+                "scope": "none"
+            }
+        ],
+        "voPersonApplicationPassword": [
             {
-                "value": "liz@gmail.com",
-                "email_verified": false
+                "value": "{bcrypt}$2y$10$NCAEogo6Q1boibEUAshANeR.Xy5ruAuEgF9us5pDvC.Ujo9kaiwY.",
+                "app": "wiki"
+            }
+        ],
+        "voPersonApplicationUID": [
+            {
+                "value": "plee@myvo.org",
+                "app": "wiki",
+                "prior": false
+            }
+        ],
+        "voPersonAuthorName": [
+            {
+                "value": "P Q Lee",
+                "prior": false
+            }
+        ],
+        "voPersonCertificateDN": [
+            {
+                "value": "C = DE, O = GermanGrid, OU = KIT, CN = Queen Elizabeth",
+                "prior": false,
+                "scope": "cert1"
+            }
+        ],
+        "voPersonCertificateIssuerDN": [
+            {
+                "value": "CN=CILogon Basic CA 1, O=CILogon, C=US, DC=cilogon, DC=org",
+                "scope": "cert1"
             }
         ],
         "voPersonExternalAffiliation": [
-            "member@royal.uk"
-        ],
-        "eduPersonScopedAffiliation": [
-            "member@community.of.royals.uk"
-        ],
-        "entitlements": [
             {
-                "value": "urn:mace:egi.eu:group:royals:admins:role=owner#aai.egi.eu",
-                "$ref": "https://groups.royal.uk/core-team/?filter=admins"
-            },
-            {
-                "value": "urn:geant:edugain:group:royals:role=queen",
-                "$ref": "https://groups.edugain.org/royals/?role=queen"
+                "value": "gradstudent@yourvo.org",
+                "prior": false
             }
         ],
+        "voPersonExternalID": [
+            {
+                "value": "610400998542241058734@google.com",
+                "prior": false
+            }
+        ],
+        "voPersonID": [
+            {
+                "value": "V097531",
+                "prior": false
+            }
+        ],
+        "voPersonPolicyAgreement": [
+            {
+                "value": "https://myvo.org/policies/acceptable-use",
+                "time": 1516593822,
+                "version": [
+                    "v1.0",
+                    "v1.1",
+                    "v2.0"
+                ]
+            }
+        ],
+        "voPersonScopedAffiliation": [
+            "member@community.of.royals.uk"
+        ],
+        "voPersonSoRID": [
+            {
+                "value": "E00747400",
+                "prior": false,
+                "scope": "hrms"
+            }
+        ],
+        "voPersonStatus": [
+            {
+                "value": "active",
+                "role": "none"
+            },
+            {
+                "value": "pending",
+                "role": "admin"
+            }
+        ],
+        "voPersonToken": [
+            {
+                "value": "SERIAL12345"
+            },
+            {
+                "value": "T0067890",
+                "type": "totp"
+            }
+        ],
+        "voPersonVerifiedEmail": [
+            {
+                "value": "elizabeth@royal.uk",
+                "preferred": true
+            },
+            {
+                "value": "liz@gmail.com",
+                "preferred": false
+            }
+        ],
+        "voPersonSshPublicKey": [
+            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAqA5FW6m3FbFhCOsRQBxKMRki5qJxoNhZdaeLXg6ym/",
+            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK4/7MGLu0yTQP8mtDNlLtXjvG5WqnXDMoE92bV0whlt"
+        ]
+    },
+    "urn:geant:aarc:scim:schemas:AARCCommunity:User": {
         "eduPersonAssurance": [
             "https://refeds.org/assurance/IAP/high",
             "https://refeds.org/assurance/IAP/medium",
@@ -85,14 +172,6 @@
             "https://refeds.org/assurance/profile/cappuccino",
             "https://refeds.org/assurance/IAP/low"
         ],
-        "eduPersonOrcid": "0300-0122-8229-2117",
-        "preferredUsername": "hmsqueenliz",
-        "sub": "d7a53cb23423420398409de7355956560282158ecac8f3d2c770b474862f4756",
-        "sshPublicKeys": [
-            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAqA5FW6m3FbFhCOsRQBxKMRki5qJxoNhZdaeLXg6ym/"
-        ],
-        "voPersonCertificateIssuerDN": [
-            "C = DE, O = GermanGrid, CN = GridKa-CA"
-        ]
+        "eduPersonOrcid": "https://orcid.org/0000-0002-1825-0097"
     }
 }
