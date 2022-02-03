@@ -46,31 +46,10 @@
         }
     ],
     "urn:temporaryNamespace:scim:schemas:voPerson:User": {
-        "voPersonAffiliation": [
-            {
-                "value": "gradstudent",
-                "prior": false,
-                "role": "none",
-                "scope": "none"
-            }
-        ],
         "voPersonApplicationPassword": [
             {
                 "value": "{bcrypt}$2y$10$NCAEogo6Q1boibEUAshANeR.Xy5ruAuEgF9us5pDvC.Ujo9kaiwY.",
                 "app": "wiki"
-            }
-        ],
-        "voPersonApplicationUID": [
-            {
-                "value": "plee@myvo.org",
-                "app": "wiki",
-                "prior": false
-            }
-        ],
-        "voPersonAuthorName": [
-            {
-                "value": "P Q Lee",
-                "prior": false
             }
         ],
         "voPersonCertificateDN": [
@@ -92,18 +71,6 @@
                 "prior": false
             }
         ],
-        "voPersonExternalID": [
-            {
-                "value": "610400998542241058734@google.com",
-                "prior": false
-            }
-        ],
-        "voPersonID": [
-            {
-                "value": "V097531",
-                "prior": false
-            }
-        ],
         "voPersonPolicyAgreement": [
             {
                 "value": "https://myvo.org/policies/acceptable-use",
@@ -117,32 +84,6 @@
         ],
         "voPersonScopedAffiliation": [
             "member@community.of.royals.uk"
-        ],
-        "voPersonSoRID": [
-            {
-                "value": "E00747400",
-                "prior": false,
-                "scope": "hrms"
-            }
-        ],
-        "voPersonStatus": [
-            {
-                "value": "active",
-                "role": "none"
-            },
-            {
-                "value": "pending",
-                "role": "admin"
-            }
-        ],
-        "voPersonToken": [
-            {
-                "value": "SERIAL12345"
-            },
-            {
-                "value": "T0067890",
-                "type": "totp"
-            }
         ],
         "voPersonVerifiedEmail": [
             {
