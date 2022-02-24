@@ -46,12 +46,6 @@
         }
     ],
     "urn:temporaryNamespace:scim:schemas:voPerson:User": {
-        "voPersonApplicationPassword": [
-            {
-                "value": "{bcrypt}$2y$10$NCAEogo6Q1boibEUAshANeR.Xy5ruAuEgF9us5pDvC.Ujo9kaiwY.",
-                "app": "wiki"
-            }
-        ],
         "voPersonCertificateDN": [
             {
                 "value": "C = DE, O = GermanGrid, OU = KIT, CN = Queen Elizabeth",
@@ -69,17 +63,6 @@
             {
                 "value": "gradstudent@yourvo.org",
                 "prior": false
-            }
-        ],
-        "voPersonPolicyAgreement": [
-            {
-                "value": "https://myvo.org/policies/acceptable-use",
-                "time": 1516593822,
-                "version": [
-                    "v1.0",
-                    "v1.1",
-                    "v2.0"
-                ]
             }
         ],
         "voPersonScopedAffiliation": [
