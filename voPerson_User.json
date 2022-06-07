@@ -324,7 +324,7 @@
             "subAttributes": [
                 {
                     "name": "value",
-                    "description": "Value of the voPersonExternalID. Example: plee@university.edu",
+                    "description": "Value of the voPersonID. Example: plee@university.edu",
                     "type": "string",
                     "multiValued": false,
                     "required": true,
