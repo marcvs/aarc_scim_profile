@@ -1,6 +1,6 @@
 {
     "id": "urn:temporaryNamespace:scim:schemas:voPerson:User",
-    "name": "VO Person Provile",
+    "name": "VO Person Profile",
     "description": "voPerson is both a set of recommendations and an ldap attribute schema (object class), intended to provide a common reference point for attribute management within a Virtual Organization (VO)",
     "attributes": [
         {
